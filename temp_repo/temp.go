@@ -1,21 +1,21 @@
 package main
-import(
+import (
 	"fmt"
 )
 
 func main(){
-	f()
+
+	arr := [5]int{0,1,2,3,4}
+	
+	ret := sum(arr[:])
+	fmt.Println("the sum_ret:",ret)
+
 }
 
-func a(){
-	i := 0
-	defer fmt.Println(i)
-	i++
-	return
-}
-
-func f(){
-	for i:=0;i<5;i++{
-		defer fmt.Println("current i:",i)
+func sum(a []int)int{
+	var sum_ret int
+	for _,v := range a{
+		sum_ret += v
 	}
+	return sum_ret
 }
